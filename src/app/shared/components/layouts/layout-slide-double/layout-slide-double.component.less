@@ -1,0 +1,263 @@
+.container {
+    
+    display: block;
+    
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+
+}
+
+.order-left{
+    flex-direction: row-reverse;
+}
+.order-right{
+    flex-direction: row;
+}
+
+.col1-picture{
+    .col1{
+        width: 50%;
+        display: block;
+    }
+    .col2{
+        width: 50%;
+        display: block;
+    }
+}
+
+.col2-picture{
+    .col2{
+        width: 50%;
+        display: block;
+    }
+    .col1{
+        width: 50%;
+        display: block;
+    }
+}
+
+.col1-picture .wrapper,.col2-picture .wrapper{
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+    border-top: 1px solid gray;
+
+    padding-top: 1em;
+    margin-top: 5em;
+
+    padding-left: 3em;
+    padding-right: 1em;
+    padding-bottom: 3em;
+}
+
+.col1-picture .wrapper{
+    width: calc(100% - 3em);
+    margin-right: 3em;
+}
+.col2-picture .wrapper{
+    width: calc(100% - 3em);
+    margin-right: 3em;
+}
+
+
+:host ::ng-deep .layout-picture img{
+    display: block;
+    width: 100% !important;
+    height: 100vh !important;
+    object-fit: cover;
+    object-position: center;
+}
+
+:host ::ng-deep .layout-content {
+   
+    p{
+        width: 100%;
+        max-width: 628px;
+        box-sizing: border-box;
+        padding: 0px;
+
+        font-size: 19px;
+        letter-spacing: 1px;
+        line-height: 1.25em;
+        max-width: 100%;
+        margin-left: auto;
+
+        font-family: 'Brandon-Regular';
+        font-weight: 300;
+        strong{
+            font-family: 'Brandon-Regular';
+            font-weight: 900;
+        }
+    }
+
+    ul{
+        width: 100%;
+        box-sizing: border-box;
+      
+        margin-left: auto;
+        //list-style-type: none;
+        padding: 0px;
+        margin: 0px;
+
+        padding-right: 3em;
+        letter-spacing: 1px;
+        line-height: 1.2em;
+        font-family: 'Brandon-Regular';
+        font-weight: 300;
+
+
+        li{
+            position: relative;
+            left: 1em;
+            max-width: 610px;
+            font-family: 'Brandon-Regular';
+        font-weight: 300;
+
+        }
+        
+    }
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    h1{
+        line-height: 1.25em;
+        font-size: 34px;
+        letter-spacing: 3px;
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+        font-family: 'ArquitectaBold';
+    }
+}
+
+@media (max-width: 800px) {
+
+    .container{
+        display: block;
+        height: fit-content;
+    }
+
+    .col1-picture{
+        display: block;
+        .col1{
+            width:  100% !important;
+            display: block;
+        }
+        .col2{
+            width:  100% !important;
+            display: block;
+        }
+    }
+    
+    .col2-picture{
+        display: block;
+        .col2{
+            width: 100% !important;
+            display: block;
+        }
+        .col1{
+            width: 100% !important;
+            display: block;
+        }
+    }
+
+    .col1-picture .wrapper{
+        width: calc(100% - 3em);
+        margin: 0 auto;
+        padding: 0px;
+    }
+    .col2-picture .wrapper{
+        width: calc(100% - 3em);
+        margin: 0 auto;
+        padding: 0px;
+    }
+
+
+    :host ::ng-deep .layout-content {
+   
+        p{
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+            padding: 0px;
+    
+            font-size: 14px;
+            letter-spacing: 1px;
+            line-height: 1.25em;
+            max-width: 100%;
+            margin-left: auto;
+    
+            strong{
+                font-family: 'Brandon-Regular';
+                font-weight: 900;
+            }
+        }
+    
+        ul{
+            width: 100%;
+            box-sizing: border-box;
+          
+            margin-left: auto;
+            //list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+    
+            padding-right: 0em;
+            letter-spacing: 1px;
+            line-height: 1.15em;
+    
+            li{
+                position: relative;
+                left: 1em;
+                max-width: 100%;
+                padding-bottom: 1em;
+                font-size: 14px;
+            }
+            
+        }
+    
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+    
+        h1{
+            line-height: 1.2em;
+            font-size: 27px;
+            letter-spacing: 3px;
+            margin-top: 1.5em;
+            margin-bottom: 1.5em;
+            font-family: 'ArquitectaBold';
+        }
+    }
+    
+        
+}

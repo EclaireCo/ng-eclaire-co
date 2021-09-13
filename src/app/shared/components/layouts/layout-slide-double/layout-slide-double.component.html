@@ -1,0 +1,20 @@
+<div class="section-layout">
+    <div class="container col1-picture" [ngClass]="{'order-left': layoutPictureSide === 'left', 'order-right': layoutPictureSide === 'right'}">
+        <div class="col col1">
+            <ng-content select=".layout-picture"></ng-content>
+        </div>
+        <div class="col col2">
+            <div class="wrapper" >
+                <div [ngStyle]="{
+                    'max-width': layoutTextMaxWidth, 
+                    'text-align': layoutTextAlign,
+                    'margin-left': layoutPictureSide === 'left' ? 'auto': '0px',
+                    'margin-right': layoutPictureSide === 'right' ? 'auto': '0px'
+                }">
+                    <ng-content select=".layout-content"></ng-content>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

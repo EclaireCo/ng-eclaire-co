@@ -1,10 +1,170 @@
-<div fullpage id="fullpage" [options]="config" (ref)="getRef($event)">
-    <div class="section">Some section1</div>
-      <div class="section" (click)="fullpage_api.moveSectionDown()">Some section2</div>
-      <div class="section">
-          <div class="slide">Slide 2.1</div>
-          <div class="slide">Slide 2.2</div>
-          <div class="slide">Slide 2.3</div>
-      </div>
-      <div class="section" (click)="fullpage_api.moveTo('secondPage', 2)">Some section4</div>
-  </div>
+<div fullpage id="fullpage" [options]="config" (ref)="getRef($event)" #fullpageRef>
+
+	<div class="section section-1 section-cover fp-auto-height">
+
+		<div class="video-wrapper">
+			<video autoplay muted loop id="eclaireLogoBg">
+				<source src="../../../assets/videos/anim_logo.mp4" type="video/mp4">
+			</video>
+
+			<div class="video-btn">
+				<img src="../../../assets/images/icons/video_down_btn.png" (click)="goToNextSlide()">
+			</div>
+		</div>
+
+	</div>
+
+
+	<div class="section section-2 section-split-info fp-auto-height">
+		<div class="split-up">
+			<h1>
+				Ayudamos a personas amantes del buen gusto y 
+				diseño exclusivo a materializar sus sueños y proyectos 
+				realizando una inversión exitosa e innovadora
+			</h1>
+		</div>
+		<div class="split-bottom">
+			<h1>
+				Somos una Agencia Boutique De Arquitectura
+				E Interiorismo en la que puedes confiar.
+			</h1>
+			<h2>
+				No solo por nuestros estándares de calidad si no, por nuestro compromiso, honestidad y transparencia
+			</h2>
+		</div>
+	</div>
+	<div class="section section-3 section-mauricio fp-auto-height">
+		<app-layout-slide-double 
+			[layoutTextMaxWidth]="'560px'"
+			[layoutTextAlign]="'justify'"
+			[layoutPictureSide]="'left'">
+				<div class="layout-picture"><img src="../../../assets/images/home/mauricio.png"></div>
+				<div class="layout-content">
+				<p>
+					En nuestra experiencia sabemos que puedes ahorrar <strong>tiempo y dinero</strong> con 
+					una dirección <strong>responsable y creativa</strong>. Es hora de que pierdas el miedo a 
+					delegar la función más importante de tu proyecto, <strong>LA CREACIÓN</strong>.
+				</p>
+				<p>
+					La búsqueda de un profesional o una empresa que te escuche, te entienda 
+					y que se enfoque en lo que necesitas se puede volver una decisión de gran 
+					complejidad. Pero cuando la encuentras es <strong>tu aliado, tu asesor, tu mano</strong> 
+					derecha para invertir el capital de manera estratégica.
+				</p>
+				<p>
+					En el mercado puedes encontrar empresas que te proponen grandes 
+resultados y terminan siendo:
+				</p>
+				<ul>
+					<li>
+						procesos caóticos,
+					</li>
+					<li>
+						sin control en los recursos
+					</li>
+					<li>
+						diseños que no cumplen con las expectativas y necesidades
+					</li>
+					<li>
+						con elecciones de materiales de mala calidad
+					</li>
+					<li>
+						aumentos inesperados de presupuesto
+					</li>
+					<li>
+						post ventas irresponsables y todo esto termina viéndose afectado en la pérdida de la inversión.
+					</li>
+				</ul>
+				</div>
+		</app-layout-slide-double>
+	</div>
+	<div class="section section-3 section-house fp-auto-height">
+		<app-layout-slide-double 
+			[layoutPictureSide]="'right'"
+			[layoutTextAlign]="'justify'"
+			[layoutTextMaxWidth]="'537px'"
+		>
+			<div class="layout-picture">
+				<img src="../../../assets/images/home/home_section_house.png">
+			</div>
+			<div class="layout-content">
+				<p>
+					La creacion de espacios diferentes, admirados e influyentes 
+					generan comodidad, sofisticación y lujo, a través del diseño 
+					inteligente y la funcionalidad. El efecto que causa estas 
+					variables se ve reflejado en hogares y negocios exitosos, que 
+					transmiten la esencia de su empresa a sus clientes y 
+					colaboradores, crean sentido de pertenencia y como resultado 
+					son empresas competitivas que crecen y se terminan 
+					diferenciando en el mercado
+				</p>
+				<h1>ESTÁS EN BUENAS MANOS.
+				</h1>
+				<p>
+					La razón de nuestro servicio viene de la experiencia y el 
+					conocimiento que hemos desarrollado en los últimos 18 años. 
+					Hemos recopilado los procesos de cada proyecto para 
+					quedarnos con los mejores servicios y productos para cada uno 
+					de nuestros clientes, teniendo elementos diferenciadores que 
+					en el mercado no se han explotado de forma conjunta con la 
+					arquitectura
+				</p>
+			</div>
+		</app-layout-slide-double>
+	</div>
+	<div class="section section-3 section-quote fp-auto-height">
+		<h1>SOMOS LA LUZ QUE <strong> REVELA LA ESENCIA </strong></h1>
+	</div>
+	<div class="section section-3 section-testimony fp-auto-height">
+		<h1>TESTIMONIOS</h1>
+		<ul *ngIf="true">
+			
+			<swiper
+			[slidesPerView]="2.6" [spaceBetween]="50" [pagination]="{ type: 'fraction' }" [navigation]="true"
+			>
+				<ng-template swiperSlide *ngFor="let testimonio of testimonios | sortByLength">
+					<li>
+						<p>{{ testimonio.text }}</p>
+						<h5>{{ testimonio.author}} </h5>
+					</li>
+				</ng-template>
+			</swiper>
+
+
+		</ul>
+
+		
+
+	</div>
+	<div class="section section-3 section-booking fp-auto-height">
+
+		<div class="wrapper-row">
+			<div class="wrapper-col col-bg-text">
+				<img src="../../../assets/images/home/ANY GYO RENDER.jpg">
+				<div class="col-bg-text--div">
+					<h1>
+						AGENDA TU LLAMADA DE <strong>15 MINUTOS</strong>
+					</h1>
+					<h5 style="padding-bottom: 2em;">
+						Escoge el día y la hora en que puedas recibir nuestra llamada
+					</h5>
+				</div>
+			</div>
+
+			<div class="wrapper-col col-calendar">
+				<!-- Principio del widget integrado de Calendly -->
+				<div class="calendly-inline-widget" 
+				     data-url="https://calendly.com/eclairearchitecture/llamada15min" 
+					 style="min-width:320px;height:100vh;">
+				</div>
+				<!-- Final del widget integrado de Calendly -->
+			</div>
+		</div>
+	</div>
+
+	<div class="section footer fp-auto-height">
+		<app-footer></app-footer>
+	</div>
+
+
+</div>

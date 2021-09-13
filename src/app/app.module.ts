@@ -3,6 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AngularFullpageModule } from '@fullpage/angular-fullpage';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SharedModule } from './shared/shared.module';
+import { ViewsModule } from './views/views.module';
+
+
 
 @NgModule({
   declarations: [
@@ -11,6 +15,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ViewsModule,
+    SharedModule,
     AngularFullpageModule,
   ],
   providers: [],

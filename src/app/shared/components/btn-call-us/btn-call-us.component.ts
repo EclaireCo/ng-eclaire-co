@@ -9,6 +9,11 @@ export class BtnCallUsComponent implements OnInit {
 
   constructor() { }
 
+
+  goToCalendly(){
+    window.open("https://calendly.com/eclairearchitecture/llamada15min", "_blank");
+  }
+
   ngOnInit(): void {
   }
 

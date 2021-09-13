@@ -1,0 +1,1 @@
+//declare module 'fullpage.js/dist/fullpage.extensions.min'
